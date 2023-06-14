@@ -14,6 +14,6 @@ steps:
   env:
   - 'CLOUDSDK_COMPUTE_ZONE=us-central1'
   - 'CLOUDSDK_CONTAINER_CLUSTER=us-central-1'
-#options:
-#  pool:
-#    name: 'projects/upbeat-agent-389803/locations/us-central1/workerPools/private-pool'
+options:
+  pool:
+    name: 'projects/upbeat-agent-389803/locations/us-central1/workerPools/private-pool'
