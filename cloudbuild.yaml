@@ -5,8 +5,6 @@ steps:
   args:
     - -c
     - |
-      OLD_CIDR=$(gcloud container clusters describe us-central-1 --zone us-central1 --format json | jq -r '.masterAuthorizedNetworksConfig.cidrBlocks[] | .cidrBlock' | tr '\n' ',')
-      echo "The existing master authorized networks were $OLD_CIDR"
       apt-get install dnsutils -y && 
       OLD_CIDR=$(gcloud container clusters describe us-central-1 --zone us-central1 --format json | jq -r '.masterAuthorizedNetworksConfig.cidrBlocks[] | .cidrBlock' | tr '\n' ',')
       echo "The existing master authorized networks were $OLD_CIDR"
