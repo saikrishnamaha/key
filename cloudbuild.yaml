@@ -5,7 +5,7 @@ steps:
   args:
     - -c
     - |
-      apt-get install dnsutils -y && 
+      apt-get install dnsutils jq -y && 
       cloudbuild_external_ip=$(dig @resolver4.opendns.com myip.opendns.com +short) &&
       old_cidr=$(gcloud container clusters describe us-central-1 --zone us-central1 --format json | jq -r '.masterAuthorizedNetworksConfig.cidrBlocks[] | .cidrBlock' | tr '\n' ',')
       echo "The existing master authorized networks were $old_cidr"
